@@ -1,0 +1,80 @@
+﻿@model Company_devices.Models.Device
+@{
+    ViewData["Title"] = "Add Device";
+}
+
+<h1>Add Device</h1>
+<form asp-action="addDevice">
+    <div class="row form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="col-sm-8" id="f1" style="display:block;">
+            <h3><strong>Device Details </strong></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="name"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="name" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="name" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="macD"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="macD" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="macD" class="text-danger"></span>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="SerialNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="SerialNumber" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="SerialNumber" class="text-danger"></span>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Vendor"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Vendor" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Vendor" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label> Employee</label>
+                </div>
+                <div class="col-sm-6">
+                    <select asp-for="Empid" class="form-control" asp-items="ViewBag.Empid"></select>
+                    @*<input asp-for="Empid" class="form-control" disabled value="ViewBag.id" style="display:block" />*@
+                </div>
+            </div>
+            <span asp-validation-for="Empid" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <a asp-action="DeviceList" class="btn btn-sm btn-secondary">Back to List</a>
+                </div>
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-sm btn-success">Add Device</button>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</form>
+
+

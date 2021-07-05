@@ -1,0 +1,163 @@
+﻿@model Company_devices.Models.Employee
+@{
+    ViewData["Title"] = "viewEmployee";
+}
+
+<h1>Employee Details</h1>
+<hr />
+<p>
+    <a asp-action="DeviceList" asp-route-id="@Model.Empid" class="btn btn-sm btn-warning">View Devices</a>
+</p>
+<br />
+<div class="row form-border">
+    <!--
+    ======================================================
+                            Step One
+    ======================================================
+    -->
+    <div class="row col-sm-12"> 
+        <div class="col-sm-6">
+            <h3><strong>Personal Details </strong></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="FirstName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="FirstName" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="LastName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="LastName" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Gender"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Gender" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="IdNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="IdNumber" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Ethnicity"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Ethnicity" disabled class="form-control" />
+
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Position"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Position" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="AlternativeContact"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="AlternativeContact" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <a asp-action="EmployeeList" class="btn btn-secondary">Back To List</a>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+
+        <!--======================================================
+                        Step Two
+    =======================================================-->
+        <div class="col-sm-6">
+            <h3><strong>Address Details</strong></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Address"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Address" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="StreetName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="StreetName" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Surburb"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Surburb" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="City"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="City" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="PostalCode"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="PostalCode" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Province"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Province" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            
+            <br />
+        </div>
+    </div>
+    <br />
+</div>

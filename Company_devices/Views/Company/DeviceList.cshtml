@@ -1,0 +1,69 @@
+﻿@model Company_devices.Models.EmployeeDeviceViewModel
+@{
+    ViewData["Title"] = "DeviceList";
+}
+
+<h1>Devices</h1>
+<hr />
+<p>
+    @*<a asp-action="addDevice" asp-route-id="@Model.Employee.Empid" class="btn btn-sm btn-primary">Add Device</a>*@
+</p>
+<hr />
+<div class="form-border">
+    <table class="table" id="myTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.device.FirstOrDefault().name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.device.FirstOrDefault().macD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.device.FirstOrDefault().SerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.device.FirstOrDefault().Vendor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.device.FirstOrDefault().Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.device.FirstOrDefault().date_create)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach (var item in Model.device)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.macD)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.SerialNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Vendor)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.date_create)
+                </td>
+                <td>
+                    <a asp-action="" asp-route-id="@item.deviceID" class="btn btn-sm btn-warning">View Device</a> |
+                    <a asp-action="" asp-route-id="@item.deviceID" class="btn btn-sm btn-secondary">Update</a> |
+                    <a asp-action="" asp-route-id="@item.deviceID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+    <a asp-action="EmployeeList" class="btn btn-secondary">Back to Employees</a>
+</div>
+

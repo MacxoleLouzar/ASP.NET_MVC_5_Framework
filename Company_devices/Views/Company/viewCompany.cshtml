@@ -1,0 +1,210 @@
+﻿@model Company_devices.Models.Company
+@{
+    ViewData["Title"] = "Company Details";
+}
+
+<h1>Company Details</h1>
+
+<hr />
+<p>
+    <a asp-action="addEmployee" asp-route-id="@Model.id" class="btn btn-sm btn-primary">Add Employee</a> | 
+    <a asp-action="addDevice" class="btn btn-sm btn-warning">Add Device</a>
+</p>
+
+<br />
+<div class="row form-border">
+    <!--
+    ======================================================
+                            Step One
+    ======================================================
+    -->
+    
+    <div class="row">
+        <div class="col-sm-12" id="f1">
+            <h4><strong>Company Details</strong></h4>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="CompanyName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="CompanyName" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="RegistrationNO"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="RegistrationNO" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Director"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Director" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="TelphoneNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="TelphoneNumber" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="CellphoneNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="CellphoneNumber" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="email"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="email" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            @*<div class="row">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <button type="button" id="next1" class="btn btn-primary">Next</button>
+            </div>
+        </div>*@
+            <br />
+        </div>
+
+        <!--======================================================
+                            Step Two
+        =======================================================-->
+        <div class="row col-sm-12">
+            <div class="col-sm-6" id="f2">
+                <h4><strong>Physical Address </strong></h4>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Address"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Address" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="ComplexName"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="ComplexName" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="StreetName"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="StreetName" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Surburb"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Surburb" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="City"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="City" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="PostalCode"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="PostalCode" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <!--======================================================
+                        Step Three
+            =======================================================-->
+            <div class="col-sm-6" id="f3">
+                <h4><strong>Postal Address</strong></h4>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Addrees1"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Addrees1" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Addrees2"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Addrees2" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Addrees3"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Addrees3" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Addrees4"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Addrees4" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Addrees5"></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input asp-for="Addrees5" disabled class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

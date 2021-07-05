@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Company_devices.Models.Company>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List Of Companies</h1>
+<hr />
+<link href="~/DataTables/datatables.css" rel="stylesheet" />
+<script src="~/DataTables/datatables.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<p>
+    <a asp-action="addCompany" class="btn btn-sm btn-primary">Create New Company</a>
+</p>
+<hr />
+<div class="form-border">
+    <table class="dataTable dataTables_filter dataTables_wrapper dataTables_paginate dataTables_processing" id="myTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.RegistrationNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.TelphoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.City)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.RegistrationNO)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Director)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.TelphoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.City)
+                </td>
+                <td>
+                    <a asp-action="viewCompany" asp-route-id="@item.id" class="btn btn-sm btn-primary">View</a> |
+                    <a asp-action="addEmployee" asp-route-id="@item.id" class="btn btn-sm btn-warning">Manage Employees</a> |
+                    @*<a asp-action="Delete" asp-route-id="@item.id" class="btn btn-sm btn-danger">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+

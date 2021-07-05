@@ -1,0 +1,283 @@
+﻿@model Company_devices.Models.Company
+@{
+    ViewData["Title"] = "addCompany";
+}
+<h1>Add New Company</h1>
+<br />
+<hr />
+<form asp-action="AddCompany">
+    <div class="row form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!--
+    ======================================================
+                            Step One
+    ======================================================
+    -->
+        <div class="col-sm-8" id="f1" style="display:block;">
+            <h3><strong>Company Details </strong><em>(Step 1 Of 3)</em></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="CompanyName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="CompanyName" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="CompanyName" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="RegistrationNO"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="RegistrationNO" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="RegistrationNO" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Director"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Director" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Director" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="TelphoneNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="TelphoneNumber" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="TelphoneNumber" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="CellphoneNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="CellphoneNumber" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="CellphoneNumber" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="email"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="email" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="email" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" id="next1" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <!--======================================================
+                            Step Two
+        =======================================================-->
+        <div class="col-sm-8" id="f2" style="display:none;">
+            <h3><strong>Company Physical Address </strong><em>(Step 2 Of 3)</em></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Address"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Address" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Address" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="ComplexName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="ComplexName" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="ComplexName" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="StreetName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="StreetName" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="StreetName" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Surburb"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Surburb" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Surburb" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="City"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="City" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="City" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="PostalCode"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="PostalCode" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="button" value="Back" id="back1" class="btn btn-secondary">Back</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" id="next2" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <!--======================================================
+                            Step Three
+        =======================================================-->
+        <div class="col-sm-8" id="f3" style="display:none;">
+            <h3><strong>Company Postal Address </strong><em>(Step 3 Of 3)</em></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Addrees1"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Addrees1" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Addrees1" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Addrees2"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Addrees2" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Addrees2" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Addrees3"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Addrees3" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Addrees3" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Addrees4"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Addrees4" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Addrees4" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Addrees5"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Addrees5" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Addrees5" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="button" value="Back" id="back2" class="btn btn-secondary">Back</button>
+                </div>
+                <div class="col-sm-6">
+                    <input type="submit" value="Add Company" class="btn btn-success" />
+                    @*<input type="submit" asp-action="Index" value="Back To List" class="btn btn-secondary" />*@
+                </div>
+            </div>
+            <br />
+        </div>
+
+    </div>
+</form>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $('#next1').click(function () {
+        jQuery('#f2').css('display', 'block');
+        jQuery('#f1').css('display', 'none');
+        jQuery('#f3').css('display', 'none');
+    });
+
+    $('#back1').click(function () {
+        jQuery('#f2').css('display', 'none');
+        jQuery('#f1').css('display', 'block');
+        jQuery('#f3').css('display', 'none');
+    });
+
+    $('#next2').click(function () {
+        jQuery('#f2').css('display', 'none');
+        jQuery('#f1').css('display', 'none');
+        jQuery('#f3').css('display', 'block');
+    });
+
+    $('#back2').click(function () {
+        jQuery('#f2').css('display', 'block');
+        jQuery('#f1').css('display', 'none');
+        jQuery('#f3').css('display', 'none');
+    });
+</script>
+
+@*<script>
+        function next1() {
+            jQuery('#f2').css('display', 'none');
+            jQuery('#f1').css('display', 'block');
+            //jQuery('#next1').css('display', 'none');
+            //jQuery('#next_button2').css('display', 'inline-block');
+            //jQuery('#next_button').css('display', 'none');
+        }
+        function back1() {
+            jQuery('#f2').css('display', 'none');
+            jQuery('#f1').css('display', 'block');
+            //jQuery('#back_button').css('display', 'inline-block');
+            //jQuery('#next_button2').css('display', 'inline-block');
+            //jQuery('#next_button').css('display', 'none');
+        }
+    </script>*@
+
+

@@ -1,0 +1,224 @@
+﻿@model Company_devices.Models.Employee
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+<h1>Add Employee</h1>
+<hr />
+<p>
+    <a asp-action="EmployeeList" class="btn btn-sm btn-primary">View Employees</a>
+</p>
+<hr />
+<form asp-action="AddEmployee">
+    <div class="row form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!--
+        ======================================================
+                                Step One
+        ======================================================
+        -->
+        <div class="col-sm-8" id="f1" style="display:block;">
+            <h3><strong>Personal Details </strong><em>(Step 1 Of 2)</em></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="FirstName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="FirstName" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="LastName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="LastName" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Gender"></label>
+                </div>
+                <div class="col-sm-6">
+                    @Html.RadioButtonFor(m => m.Gender, "Male") : Male <br />
+                    @Html.RadioButtonFor(m => m.Gender, "Female") : Female
+                </div>
+            </div>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="IdNumber"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="IdNumber" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="IdNumber" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Ethnicity"></label>
+                </div>
+                <div class="col-sm-6">
+                    @Html.DropDownListFor(m => m.Ethnicity, new List<SelectListItem>
+                    {
+                        new SelectListItem {Text ="Black", Value="Black"},
+                        new SelectListItem {Text ="White", Value="White"},
+                        new SelectListItem {Text ="Coloureds", Value="Coloureds"},
+                        new SelectListItem {Text ="Indian", Value="Indian"},
+                    }, "--Select Ethnicity--", new { @class = "form-control" })
+
+                </div>
+            </div>
+            <span asp-validation-for="Ethnicity" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Position"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Position" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Position" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="AlternativeContact"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="AlternativeContact" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="AlternativeContact" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" id="next1" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <!--======================================================
+                            Step Two
+        =======================================================-->
+        <div class="col-sm-8" id="f2" style="display:none;">
+            <h3><strong>Address Details</strong><em>(Step 2 Of 2)</em></h3>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Address"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Address" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Address" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="StreetName"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="StreetName" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="StreetName" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Surburb"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="Surburb" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="Surburb" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="City"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="City" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="City" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="PostalCode"></label>
+                </div>
+                <div class="col-sm-6">
+                    <input asp-for="PostalCode" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="Province"></label>
+                </div>
+                <div class="col-sm-6">
+                    @Html.DropDownListFor(m => m.Province, new List<SelectListItem>
+                        {
+                            new SelectListItem {Text ="KwaZulu-Natal", Value="KwaZulu-Natal"},
+                            new SelectListItem {Text ="Eastern Cape", Value="Eastern Cape"},
+                            new SelectListItem {Text ="Free State", Value="Free State"},
+                            new SelectListItem {Text ="Gauteng", Value="Gauteng"},
+                            new SelectListItem {Text ="Limpopo", Value="Limpopo"},
+                            new SelectListItem {Text ="Mpumalanga", Value="Mpumalanga"},
+                            new SelectListItem {Text ="Northern Cape", Value="Northern Cape"},
+                            new SelectListItem {Text ="North West", Value="North West"},
+                        }, "--Select Ethnicity--", new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
+            <!--<div class="row">
+                <div class="col-sm-6">
+                    <label> Company</label>
+                </div>
+                <div class="col-sm-6">-->
+                    @*<select asp-for="id" class="form-control" asp-items="ViewBag.id"></select>*@
+                    <!--<input asp-for="id" class="form-control" disabled value="ViewBag.id" style="display:block" />
+                </div>
+            </div>-->
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="button" value="Back" id="back1" class="btn btn-secondary">Back</button>
+                </div>
+                <div class="col-sm-6">
+                    <input type="submit" value="Add Employee" class="btn btn-success" />
+                </div>
+            </div>
+            <br />
+        </div>
+        <br />
+    </div>
+</form>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $('#next1').click(function () {
+        jQuery('#f2').css('display', 'block');
+        jQuery('#f1').css('display', 'none');
+    });
+
+    $('#back1').click(function () {
+        jQuery('#f2').css('display', 'none');
+        jQuery('#f1').css('display', 'block');
+    });
+</script>
+

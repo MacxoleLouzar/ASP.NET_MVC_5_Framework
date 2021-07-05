@@ -1,0 +1,67 @@
+﻿@model Company_devices.Models.EmployeeAndCompanyViewModel
+@{
+    ViewData["Title"] = "EmployeeList";
+}
+
+<h1>List Of Employees</h1>
+<hr />
+<p>
+    <a asp-action="addEmployee" asp-route-id="@Model.employee.FirstOrDefault().id" class="btn btn-sm btn-primary">Add Employees</a> | 
+    <a asp-action="addDevice" asp-route-id="@Model.employee.FirstOrDefault().id" class="btn btn-sm btn-warning">Add Device</a>
+</p>
+<hr />
+<div class="form-border">
+    <table class="table" id="myTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.employee.FirstOrDefault().FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.employee.FirstOrDefault().LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.employee.FirstOrDefault().IdNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.employee.FirstOrDefault().Ethnicity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.employee.FirstOrDefault().Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.employee.FirstOrDefault().City)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach (var item in Model.employee)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.IdNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Ethnicity)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.City)
+                </td>
+                <td>
+                    <a asp-action="DeviceList" asp-route-id="@item.Empid" class="btn btn-sm btn-warning">Manage Device</a> |
+                    <a asp-action="viewEmployee" asp-route-id="@item.Empid" class="btn btn-sm btn-secondary">View</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Empid" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
